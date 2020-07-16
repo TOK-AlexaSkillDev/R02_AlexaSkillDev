@@ -4,3 +4,4 @@
 ### 現状メンバー名
 - Notflix
 - polysan
+- log_oskaaaaa
