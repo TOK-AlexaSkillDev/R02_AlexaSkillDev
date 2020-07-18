@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="//localhost:8080/css/skillList.css">
+    </head>
+    <body>
+        <a href="http://localhost:8080/skillHome"><h1>火をつける君</h1></a>
+        <form action="/snafkinSkill" method="GET">
+            <!--対戦相手:<input type="text" name="name">-->
+            <select name="name">
+                <option value="who">--- 誰を選択しますか? ---</option>
+                <option value="1">R-指定</option>
+                <option value="2">呂布カルマ</option>
+                <option value="3">黄猿</option>
+              </select>
+            <input type="submit" value="火を付ける">
+        </form>
+        <ul style="list-style: none;">
+            {{range .enemy}}
+            <div class="freeBack">
+            <li>
+                {{if eq .NameId 1}}
+                    {{if eq .Winner 1}}
+                        <img src="//localhost:8080/images/スナフキン.jpeg" class="loser" width="193" height="130">
+                        <h3 class="lose">「火つけるよ！」</h3>
+                        <h3>スフォッ....火は付かなかったようだ。。。</h3>
+                        <img src="//localhost:8080/images/R指定.png"　width="193" height="130">
+                        <h3>「ノーガード戦法、履き違えんな「本番と稽古」アーーイwwwwww」</h3>
+                        <h2 class="lose">【敗北!!!!!!!!】</h2>
+                    {{else}}
+                        <img src="//localhost:8080/images/スナフキン.jpeg" width="193" height="130">
+                        <h3 class="win">「火つけるよ！」</h3>
+                        <p>「大人はお前のラップにゃ手は挙げねえぞ!!!!!!」</p>
+                        <img src="//localhost:8080/images/R指定.png" class="loser" width="193" height="130">
+                        <h3>「どうせ俺は童貞や。。。」</h3>
+                        <h2 class="win">【勝利!!!!!!!!】</h2>
+                    {{end}}
+
+                {{else if eq .NameId 2}}
+                    {{if eq .Winner 1}}
+                        <img src="//localhost:8080/images/スナフキン.jpeg" class="loser" width="193" height="130">
+                        <h3 class="lose">「火つけるよ！」</h3>
+                        <h3>火をつけたら勢い余って喋ってしまった。。</h3>
+                        <h3>「葬式だから黒一色なんだよ、喪服なんだよ」</h3>
+                        <img src="//localhost:8080/images/呂布カルマ.png"　width="193" height="130">
+                        <h3>「終わったあとに喋んな」</h3>
+                        <h2 class="lose">【敗北!!!!!!!!】</h2>
+                    {{else}}
+                        <img src="//localhost:8080/images/スナフキン.jpeg" width="193" height="130">
+                        <h3 class="win">「火つけるよ！」</h3>
+                        <h3>「火つけたよ！」</h3>
+                        <h3>「火つけすぎて山火事起こしたよwww」</h3>
+                        <img src="//localhost:8080/images/呂布カルマ.png" class="loser" width="193" height="130">
+                        <h3>「やっぱこいつ強えわ。強い（ぴえん）」</h3>
+                        <h2 class="win">【勝利!!!!!!!!】</h2>
+                    {{end}}
+
+                {{else}}
+                    {{if eq .Winner 1}}
+                        <img src="//localhost:8080/images/スナフキン.jpeg" class="loser" width="193" height="130">
+                        <h3 class="lose">「火つけるよ！」</h3>
+                        <img src="//localhost:8080/images/黄猿.jpg"　width="193" height="130">
+                        <h3>火が酒によって消されてしまった。。。</h3>
+                        <h2 class="lose">【敗北!!!!!!!!】</h2>
+                    {{else}}
+                        <img src="//localhost:8080/images/スナフキン.jpeg" width="193" height="130">
+                        <h3 class="win">「火つけるよ！」</h3>
+                        <h3>「今日は黄猿をぶっ飛ばす」「またストレス飛ばす」「言葉ジェットバス!!!!!」</h3>
+                        <img src="//localhost:8080/images/黄猿.jpg" class="loser" width="193" height="130">
+                        <h3>「酒をくれ。。。」</h3>
+                        <h2 class="win">【勝利!!!!!!!!】</h2>
+                    {{end}}
+                {{end}}
+            </li>
+            </div>
+            {{end}}
+        </ul>
+    </body>
+</html>

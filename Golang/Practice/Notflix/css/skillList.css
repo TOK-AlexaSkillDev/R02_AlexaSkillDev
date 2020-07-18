@@ -1,0 +1,15 @@
+.win{
+    color: red;
+}
+
+.lose{
+    color: blue;
+}
+
+.loser{
+    filter: sepia(1)contrast(1.5)hue-rotate(180deg);
+}
+
+.freeBack{
+    background-color: lightgray;
+}
